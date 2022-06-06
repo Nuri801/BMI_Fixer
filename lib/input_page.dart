@@ -14,6 +14,7 @@ import 'calculator_brain.dart';
 enum Gender {
   male,
   female,
+  notSelected,
 }
 
 class InputPage extends StatefulWidget {
@@ -27,6 +28,12 @@ class _InputPageState extends State<InputPage> {
   int height = 180;
   int weight = 60;
   int age = 18;
+
+  @override
+  void initState() {
+    selectedGender = Gender.notSelected;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +124,7 @@ class _InputPageState extends State<InputPage> {
                     )
                   ],
                 ),
-                colour: kActiveCardColor),
+                colour: kActiveCardColor, onPress: () {},),
           ),
           Expanded(
             child: Row(
@@ -161,7 +168,7 @@ class _InputPageState extends State<InputPage> {
                           ],
                         ),
                       ],
-                    ),
+                    ), onPress: () {},
                   ),
                 ),
                 Expanded(
@@ -203,7 +210,7 @@ class _InputPageState extends State<InputPage> {
                           ],
                         ),
                       ],
-                    ),
+                    ), onPress: () {},
                   ),
                 )
               ],

@@ -53,7 +53,7 @@ class ResultsPage extends StatelessWidget {
                       style: kBodyTextStyle,
                     ),
                   ],
-                ),
+                ), onPress: () {},
               ),
           ),
           BottomButton(
