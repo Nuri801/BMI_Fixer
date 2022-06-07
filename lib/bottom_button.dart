@@ -12,6 +12,10 @@ class BottomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        decoration: BoxDecoration(
+          color: kBottomContainerColor,
+          borderRadius: BorderRadius.circular(15.0),
+        ),
         child: Center(
           child: Text(
             buttonTitle,
@@ -19,9 +23,8 @@ class BottomButton extends StatelessWidget {
           ),
         ),
         padding: EdgeInsets.only(bottom: 10.0),
-        color: kBottomContainerColor,
         margin: EdgeInsets.only(top: 10.0),
-        width: double.infinity,
+        // width: double.infinity,
         height: kBottomContainerHeight,
       ),
     );

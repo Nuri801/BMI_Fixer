@@ -50,7 +50,7 @@ class _InputPageState extends State<InputPage> {
             });
           },
           elevation: 100,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
           constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
           fillColor: Color(0xFF0A0D22),
         ),
@@ -68,7 +68,7 @@ class _InputPageState extends State<InputPage> {
               });
             },
             elevation: 100,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
             constraints: BoxConstraints.tightFor(width: 80, height: 56.0),
             fillColor: Color(0xFF0A0D22),
           ),
