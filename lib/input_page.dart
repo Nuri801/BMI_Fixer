@@ -40,6 +40,11 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('BMI CALCULATOR')),
+        actions: [
+          MaterialButton(
+            onPressed: () {},
+          )
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -147,6 +152,11 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
+                              onLongPressed: () {
+                                setState(() {
+                                  weight -=10;
+                                });
+                              },
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
@@ -158,6 +168,11 @@ class _InputPageState extends State<InputPage> {
                               width: 15.0,
                             ),
                             RoundIconButton(
+                              onLongPressed: () {
+                                setState(() {
+                                  weight += 10;
+                                });
+                              },
                               icon: FontAwesomeIcons.plus,
                               onPressed: (){
                                 setState(() {
@@ -189,6 +204,11 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
+                              onLongPressed: () {
+                                setState(() {
+                                  age -=10;
+                                });
+                              },
                               icon: FontAwesomeIcons.minus,
                               onPressed: (){
                                 setState(() {
@@ -200,6 +220,11 @@ class _InputPageState extends State<InputPage> {
                               width: 15.0,
                             ),
                             RoundIconButton(
+                              onLongPressed: () {
+                                setState(() {
+                                  age += 10;
+                                });
+                              },
                               icon: FontAwesomeIcons.plus,
                               onPressed: (){
                                 setState(() {
