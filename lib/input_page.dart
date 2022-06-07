@@ -37,7 +37,23 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        leadingWidth: 80,
+        leading: RawMaterialButton(
+          // onLongPress: onLongPressed,
+          child: Icon(FontAwesomeIcons.list),
+          onPressed: () {
+            setState(() {
+              height = 180;
+              weight = 60;
+              age = 18;
+              selectedGender = Gender.notSelected;
+            });
+          },
+          elevation: 100,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
+          constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
+          fillColor: Color(0xFF0A0D22),
+        ),
         title: Center(child: Text('BMI CALCULATOR')),
         actions: [
           RawMaterialButton(
@@ -51,12 +67,11 @@ class _InputPageState extends State<InputPage> {
                 selectedGender = Gender.notSelected;
               });
             },
-            elevation: 6.0,
-            shape: CircleBorder(),
-            constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
+            elevation: 100,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            constraints: BoxConstraints.tightFor(width: 80, height: 56.0),
             fillColor: Color(0xFF0A0D22),
           ),
-          SizedBox(width: 10)
         ],
       ),
       body: Column(
