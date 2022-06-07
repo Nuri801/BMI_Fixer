@@ -41,9 +41,18 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: Center(child: Text('BMI CALCULATOR')),
         actions: [
-          MaterialButton(
-            onPressed: () {},
-          )
+        RawMaterialButton(
+        // onLongPress: onLongPressed,
+        child: Icon(FontAwesomeIcons.redo),
+        onPressed: () {},
+        elevation: 6.0,
+        shape: CircleBorder(),
+        constraints: BoxConstraints.tightFor(
+            width: 56.0,
+            height: 56.0
+        ),
+        fillColor: Color(0xFF0A0D22),
+      )
         ],
       ),
       body: Column(
