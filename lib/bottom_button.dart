@@ -11,21 +11,24 @@ class BottomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          color: kBottomContainerColor,
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: Center(
-          child: Text(
-            buttonTitle,
-            style: kLargeButtonTextStyle,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 6),
+        child: Container(
+          decoration: BoxDecoration(
+            color: kBottomContainerColor,
+            borderRadius: BorderRadius.only(topRight: Radius.circular(15), topLeft: Radius.circular(15)),
           ),
+          child: Center(
+            child: Text(
+              buttonTitle,
+              style: kLargeButtonTextStyle,
+            ),
+          ),
+          padding: EdgeInsets.only(bottom: 10.0),
+          margin: EdgeInsets.only(top: 10.0),
+          // width: double.infinity,
+          height: kBottomContainerHeight,
         ),
-        padding: EdgeInsets.only(bottom: 10.0),
-        margin: EdgeInsets.only(top: 10.0),
-        // width: double.infinity,
-        height: kBottomContainerHeight,
       ),
     );
   }
