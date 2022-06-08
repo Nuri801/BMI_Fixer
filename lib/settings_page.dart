@@ -6,12 +6,26 @@ import 'bottom_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconsax/iconsax.dart';
 
+enum WeightUnit {
+  kg,
+  lb
+}
+
+enum HeightUnit {
+  cm,
+  ft
+}
+
 class SettingsPage extends StatefulWidget {
   @override
   State<SettingsPage> createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+
+  WeightUnit weightUnit = WeightUnit.kg;
+  HeightUnit heightUnit = HeightUnit.cm;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,18 +46,26 @@ class _SettingsPageState extends State<SettingsPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    colour: kInactiveCardColor,
+                    colour: weightUnit == WeightUnit.kg ? kActiveCardColor : kInactiveCardColor,
                     cardChild:
                         Center(child: Text('kg', style: kNumberTextStyle)),
-                    onPress: () {},
+                    onPress: () {
+                      setState(() {
+                        weightUnit = WeightUnit.kg;
+                      });
+                    },
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: kInactiveCardColor,
+                    colour: weightUnit == WeightUnit.lb ? kActiveCardColor : kInactiveCardColor,
                     cardChild:
                         Center(child: Text('lb', style: kNumberTextStyle)),
-                    onPress: () {},
+                    onPress: () {
+                      setState(() {
+                        weightUnit = WeightUnit.lb;
+                      });
+                    },
                   ),
                 ),
               ],
@@ -58,41 +80,35 @@ class _SettingsPageState extends State<SettingsPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    colour: kInactiveCardColor,
+                    colour: heightUnit == HeightUnit.cm ? kActiveCardColor : kInactiveCardColor,
                     cardChild:
                         Center(child: Text('cm', style: kNumberTextStyle)),
-                    onPress: () {},
+                    onPress: () {
+                      setState(() {
+                        heightUnit = HeightUnit.cm;
+                      });
+                    },
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: kInactiveCardColor,
+                    colour: heightUnit == HeightUnit.ft ? kActiveCardColor : kInactiveCardColor,
                     cardChild:
                         Center(child: Text('ft', style: kNumberTextStyle)),
-                    onPress: () {},
+                    onPress: () {
+                      setState(() {
+                        heightUnit = HeightUnit.ft;
+                      });
+                    },
                   ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(
-              colour: kActiveCardColor,
-              cardChild: Column(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Text('UNIT CONVERSION :', style: kLabelTextStyle),
-                  ),
-                  Text('1 kg ≈ 2.2 lbs; 1lb ≈ 0.45 kg', style: TextStyle(fontSize: 20),),
-                  SizedBox(height: 12),
-                  Text('1 cm ≈ 0.39 inches; 1 inch ≈ 2.54 cms', style: TextStyle(fontSize: 20),)
-                ],
-              ),
-              onPress: () {},
-            ),
+            child: SizedBox()
           ),
-          BottomButton(onTap: () {}, buttonTitle: 'APPLY')
+          BottomButton(onTap: () { Navigator.pop(context); }, buttonTitle: 'APPLY')
         ],
       ),
     );
