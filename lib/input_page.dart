@@ -1,3 +1,4 @@
+import 'package:bmi_fixer/settings_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -9,6 +10,7 @@ import 'results_page.dart';
 import 'round_icon_button.dart';
 import 'bottom_button.dart';
 import 'calculator_brain.dart';
+import 'package:iconsax/iconsax.dart';
 
 enum Gender {
   male,
@@ -40,14 +42,15 @@ class _InputPageState extends State<InputPage> {
         leadingWidth: 80,
         leading: RawMaterialButton(
           // onLongPress: onLongPressed,
-          child: Icon(FontAwesomeIcons.list),
+          child: Icon(Iconsax.setting_4, size: 30),
           onPressed: () {
-            setState(() {
-              height = 180;
-              weight = 60;
-              age = 18;
-              selectedGender = Gender.notSelected;
-            });
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SettingsPage()
+              ),
+            );
+            //create the sliding window here;
           },
           elevation: 100,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
@@ -58,7 +61,7 @@ class _InputPageState extends State<InputPage> {
         actions: [
           RawMaterialButton(
             // onLongPress: onLongPressed,
-            child: Icon(FontAwesomeIcons.redoAlt),
+            child: Icon(Iconsax.refresh1, size: 30),
             onPressed: () {
               setState(() {
                 height = 180;
@@ -244,9 +247,20 @@ class _InputPageState extends State<InputPage> {
                           'AGE',
                           style: kLabelTextStyle,
                         ),
-                        Text(
-                          age.toString(),
-                          style: kNumberTextStyle,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              age.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            Text(
+                              'yo',
+                              style: kLabelTextStyle,
+                            ),
+                          ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
