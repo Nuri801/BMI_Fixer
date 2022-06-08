@@ -17,62 +17,59 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('SET UNIT        ')),
+        title: const Center(child: Text('UNIT SETTINGS        ')),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: ReusableCard(
-                    colour: kInactiveCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
-                    ),
-                    onPress: () {},
+          Row(
+            children: [
+              Expanded(
+                child: ReusableCard(
+                  colour: kInactiveCardColor,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.venus,
+                    label: 'FEMALE',
                   ),
+                  onPress: () {},
                 ),
-                Expanded(
-                  child: ReusableCard(
-                    colour: kInactiveCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
-                    ),
-                    onPress: () {},
+              ),
+              Expanded(
+                child: ReusableCard(
+                  colour: kInactiveCardColor,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.venus,
+                    label: 'FEMALE',
                   ),
+                  onPress: () {},
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: ReusableCard(
-                    colour: kInactiveCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
-                    ),
-                    onPress: () {},
+          Row(
+            children: [
+              Expanded(
+                child: ReusableCard(
+                  colour: kInactiveCardColor,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.venus,
+                    label: 'FEMALE',
                   ),
+                  onPress: () {},
                 ),
-                Expanded(
-                  child: ReusableCard(
-                    colour: kInactiveCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
-                    ),
-                    onPress: () {},
+              ),
+              Expanded(
+                child: ReusableCard(
+                  colour: kInactiveCardColor,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.venus,
+                    label: 'FEMALE',
                   ),
+                  onPress: () {},
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
