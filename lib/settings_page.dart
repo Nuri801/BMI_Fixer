@@ -29,8 +29,8 @@ class _SettingsPageState extends State<SettingsPage> {
                 child: ReusableCard(
                   colour: kInactiveCardColor,
                   cardChild: IconContent(
-                    icon: FontAwesomeIcons.venus,
-                    label: 'FEMALE',
+                    icon: Iconsax.weight,
+                    label: 'kg',
                   ),
                   onPress: () {},
                 ),
@@ -40,7 +40,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   colour: kInactiveCardColor,
                   cardChild: IconContent(
                     icon: FontAwesomeIcons.venus,
-                    label: 'FEMALE',
+                    label: 'lb',
                   ),
                   onPress: () {},
                 ),
@@ -54,7 +54,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   colour: kInactiveCardColor,
                   cardChild: IconContent(
                     icon: FontAwesomeIcons.venus,
-                    label: 'FEMALE',
+                    label: 'cm',
                   ),
                   onPress: () {},
                 ),
@@ -64,13 +64,14 @@ class _SettingsPageState extends State<SettingsPage> {
                   colour: kInactiveCardColor,
                   cardChild: IconContent(
                     icon: FontAwesomeIcons.venus,
-                    label: 'FEMALE',
+                    label: 'ft',
                   ),
                   onPress: () {},
                 ),
               ),
             ],
           ),
+          BottomButton(onTap: () {}, buttonTitle: 'APPLY')
         ],
       ),
     );

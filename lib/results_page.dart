@@ -15,7 +15,7 @@ class ResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('BMI CALCULATOR         ')),
+        title: Center(child: Text('BODY MASS INDEX         ')),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
