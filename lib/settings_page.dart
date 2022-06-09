@@ -30,7 +30,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('UNIT SETTINGS        ')),
+        title: const Center(child: Text('UNIT SETTINGS         ')),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -185,6 +185,7 @@ class _InputPageState extends State<InputPage> {
                           crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
                           children: [
+                            SizedBox(width: 20),
                             Text(
                               weight.toString(),
                               style: kNumberTextStyle,
@@ -271,6 +272,7 @@ class _InputPageState extends State<InputPage> {
                           crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
                           children: [
+                            SizedBox(width: 25),
                             Text(
                               age.toString(),
                               style: kNumberTextStyle,
