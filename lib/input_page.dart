@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bmi_fixer/settings_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,11 +26,11 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-
   Gender selectedGender = Gender.notSelected;
   int height = 180;
   int weight = 60;
   int age = 18;
+  late Timer _timer;
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +43,13 @@ class _InputPageState extends State<InputPage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => SettingsPage()
-              ),
+              MaterialPageRoute(builder: (context) => SettingsPage()),
             );
             //create the sliding window here;
           },
           elevation: 100,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(15.0))),
           constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
           fillColor: Color(0xFF0A0D22),
         ),
@@ -66,7 +67,8 @@ class _InputPageState extends State<InputPage> {
               });
             },
             elevation: 100,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15.0))),
             constraints: BoxConstraints.tightFor(width: 80, height: 56.0),
             fillColor: Color(0xFF0A0D22),
           ),
@@ -188,7 +190,7 @@ class _InputPageState extends State<InputPage> {
                               style: kNumberTextStyle,
                             ),
                             Text(
-                                'kg',
+                              'kg',
                               style: kLabelTextStyle,
                             ),
                           ],
@@ -197,34 +199,56 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
-                              onLongPressed: () {
-                                setState(() {
-                                  weight -= 10;
-                                });
-                              },
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  weight -= 1;
+                                  weight--;
                                 });
+                              },
+                              onLongPressed: (TapDownDetails details) {
+                                _timer = Timer.periodic(
+                                    Duration(milliseconds: 70), (t) {
+                                  setState(() {
+                                    if (weight > 0) {
+                                      weight--;
+                                    }
+                                  });
+                                });
+                              },
+                              onTapUp: (TapUpDetails details) {
+                                _timer.cancel();
+                              },
+                              onTapCancel: () {
+                                _timer.cancel();
                               },
                             ),
                             SizedBox(
                               width: 15.0,
                             ),
                             RoundIconButton(
-                              onLongPressed: () {
-                                setState(() {
-                                  weight += 10;
-                                });
-                              },
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
                                   weight++;
                                 });
                               },
-                            )
+                              onLongPressed: (TapDownDetails details) {
+                                _timer = Timer.periodic(
+                                    Duration(milliseconds: 70), (t) {
+                                  setState(() {
+                                    if (weight > 0) {
+                                      weight++;
+                                    }
+                                  });
+                                });
+                              },
+                              onTapUp: (TapUpDetails details) {
+                                _timer.cancel();
+                              },
+                              onTapCancel: () {
+                                _timer.cancel();
+                              },
+                            ),
                           ],
                         ),
                       ],
@@ -261,34 +285,56 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
-                              onLongPressed: () {
-                                setState(() {
-                                  age -= 10;
-                                });
-                              },
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
                                   age--;
                                 });
                               },
+                              onLongPressed: (TapDownDetails details) {
+                                _timer = Timer.periodic(
+                                    Duration(milliseconds: 70), (t) {
+                                  setState(() {
+                                    if (weight > 0) {
+                                      age--;
+                                    }
+                                  });
+                                });
+                              },
+                              onTapUp: (TapUpDetails details) {
+                                _timer.cancel();
+                              },
+                              onTapCancel: () {
+                                _timer.cancel();
+                              },
                             ),
                             SizedBox(
                               width: 15.0,
                             ),
                             RoundIconButton(
-                              onLongPressed: () {
-                                setState(() {
-                                  age += 10;
-                                });
-                              },
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
                                   age++;
                                 });
                               },
-                            )
+                              onLongPressed: (TapDownDetails details) {
+                                _timer = Timer.periodic(
+                                    Duration(milliseconds: 70), (t) {
+                                  setState(() {
+                                    if (weight > 0) {
+                                      age++;
+                                    }
+                                  });
+                                });
+                              },
+                              onTapUp: (TapUpDetails details) {
+                                _timer.cancel();
+                              },
+                              onTapCancel: () {
+                                _timer.cancel();
+                              },
+                            ),
                           ],
                         ),
                       ],
