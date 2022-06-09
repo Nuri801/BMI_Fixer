@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bmi_fixer/settings_page.dart';
+import 'package:bmi_fixer/switch_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -20,12 +21,18 @@ enum Gender {
   notSelected,
 }
 
+enum UnitWeight {
+  kg,
+  lb,
+}
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
+  UnitWeight unitWeight = UnitWeight.kg;
   Gender selectedGender = Gender.notSelected;
   int height = 180;
   int weight = 60;
@@ -182,18 +189,24 @@ class _InputPageState extends State<InputPage> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.baseline,
-                          textBaseline: TextBaseline.alphabetic,
+                          // crossAxisAlignment: CrossAxisAlignment.baseline,
+                          // textBaseline: TextBaseline.alphabetic,
                           children: [
-                            SizedBox(width: 20),
+                            SizedBox(width: 50),
                             Text(
                               weight.toString(),
                               style: kNumberTextStyle,
                             ),
-                            Text(
-                              'kg',
-                              style: kLabelTextStyle,
-                            ),
+                            SwitchButton(
+                              onTap: () {setState(() {
+                                unitWeight = unitWeight == UnitWeight.kg ? UnitWeight.lb : UnitWeight.kg;
+                              });},
+                              unit: unitWeight == UnitWeight.kg ? 'kg' : 'lb',
+                            )
+                            // Text(
+                            //   'kg',
+                            //   style: kLabelTextStyle,
+                            // ),
                           ],
                         ),
                         Row(
