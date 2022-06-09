@@ -203,14 +203,16 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  weight--;
+                                  if (weight >= 0) {
+                                    weight--;
+                                  }
                                 });
                               },
                               onLongPressed: (TapDownDetails details) {
                                 _timer = Timer.periodic(
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
-                                    if (weight > 0) {
+                                    if (weight >= 0) {
                                       weight--;
                                     }
                                   });
@@ -237,7 +239,7 @@ class _InputPageState extends State<InputPage> {
                                 _timer = Timer.periodic(
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
-                                    if (weight > 0) {
+                                    if (weight >= 0) {
                                       weight++;
                                     }
                                   });
@@ -290,14 +292,16 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  age--;
+                                  if (age >= 0) {
+                                    age--;
+                                  }
                                 });
                               },
                               onLongPressed: (TapDownDetails details) {
                                 _timer = Timer.periodic(
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
-                                    if (weight > 0) {
+                                    if (age >= 0) {
                                       age--;
                                     }
                                   });
