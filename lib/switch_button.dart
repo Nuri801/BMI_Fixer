@@ -18,12 +18,25 @@ class _SwitchButtonState extends State<SwitchButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 30,
-      height: 30,
-      child: GestureDetector(child: Text(widget.unit), onTap: widget.onTap),
-      decoration: BoxDecoration(
-        color: kActiveCardColor,
-        borderRadius: BorderRadius.circular(15.0),
+      height: 47,
+      width: 47,
+      child: TextButton(
+        style: ButtonStyle(
+          // foregroundColor: MaterialStateProperty.all(kActiveCardColor),
+          backgroundColor: MaterialStateProperty.all(kActiveCardColor),
+          overlayColor: MaterialStateProperty.all(kInactiveCardColor),
+          elevation: MaterialStateProperty.all(6)
+        ),
+        child: Text(
+          widget.unit,
+          style: TextStyle(
+            // color: kBottomContainerColor,
+            color: Colors.white,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onPressed: widget.onTap,
       ),
     );
   }

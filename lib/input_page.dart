@@ -32,6 +32,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+
   UnitWeight unitWeight = UnitWeight.kg;
   Gender selectedGender = Gender.notSelected;
   int height = 180;
@@ -192,11 +193,12 @@ class _InputPageState extends State<InputPage> {
                           // crossAxisAlignment: CrossAxisAlignment.baseline,
                           // textBaseline: TextBaseline.alphabetic,
                           children: [
-                            SizedBox(width: 50),
+                            SizedBox(width: weight < 100? 45 : 13),
                             Text(
                               weight.toString(),
                               style: kNumberTextStyle,
                             ),
+                            SizedBox(width: 6),
                             SwitchButton(
                               onTap: () {setState(() {
                                 unitWeight = unitWeight == UnitWeight.kg ? UnitWeight.lb : UnitWeight.kg;
