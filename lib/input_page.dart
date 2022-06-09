@@ -134,17 +134,25 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
+                    // crossAxisAlignment: CrossAxisAlignment.baseline,
+                    // textBaseline: TextBaseline.alphabetic,
                     children: [
+                      SizedBox(width: 35),
                       Text(
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
-                      Text(
-                        'cm',
-                        style: kLabelTextStyle,
+                      SizedBox(width: 6),
+                      SwitchButton(
+                        onTap: () {setState(() {
+                          unitWeight = unitWeight == UnitWeight.kg ? UnitWeight.lb : UnitWeight.kg;
+                        });},
+                        unit: unitWeight == UnitWeight.kg ? 'cm' : 'ft',
                       )
+                      // Text(
+                      //   'cm',
+                      //   style: kLabelTextStyle,
+                      // )
                     ],
                   ),
                   SliderTheme(

@@ -19,12 +19,12 @@ class _SwitchButtonState extends State<SwitchButton> {
   Widget build(BuildContext context) {
     return Container(
       height: 47,
-      width: 47,
+      width: 55,
       child: TextButton(
         style: ButtonStyle(
           // foregroundColor: MaterialStateProperty.all(kActiveCardColor),
-          backgroundColor: MaterialStateProperty.all(kActiveCardColor),
-          overlayColor: MaterialStateProperty.all(kInactiveCardColor),
+          backgroundColor: MaterialStateProperty.all(Color(0xFF4C4F5E)),
+          overlayColor: MaterialStateProperty.all(Color(0xFF4C4F5E)),
           elevation: MaterialStateProperty.all(6)
         ),
         child: Text(
