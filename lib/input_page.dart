@@ -26,6 +26,11 @@ enum UnitWeight {
   lb,
 }
 
+enum UnitHeight {
+  cm,
+  ft,
+}
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -33,6 +38,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
 
+  UnitHeight unitHeight = UnitHeight.cm;
   UnitWeight unitWeight = UnitWeight.kg;
   Gender selectedGender = Gender.notSelected;
   int height = 180;
@@ -145,9 +151,9 @@ class _InputPageState extends State<InputPage> {
                       SizedBox(width: 6),
                       SwitchButton(
                         onTap: () {setState(() {
-                          unitWeight = unitWeight == UnitWeight.kg ? UnitWeight.lb : UnitWeight.kg;
+                          unitHeight = unitHeight == UnitHeight.cm ? UnitHeight.ft : UnitHeight.cm;
                         });},
-                        unit: unitWeight == UnitWeight.kg ? 'cm' : 'ft',
+                        unit: unitHeight == UnitHeight.cm ? 'cm' : 'ft',
                       )
                       // Text(
                       //   'cm',
@@ -297,14 +303,10 @@ class _InputPageState extends State<InputPage> {
                           crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
                           children: [
-                            SizedBox(width: 25),
+                            // SizedBox(width: ),
                             Text(
                               age.toString(),
                               style: kNumberTextStyle,
-                            ),
-                            Text(
-                              'yo',
-                              style: kLabelTextStyle,
                             ),
                           ],
                         ),
