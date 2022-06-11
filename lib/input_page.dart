@@ -41,7 +41,7 @@ class _InputPageState extends State<InputPage> {
   UnitHeight unitHeight = UnitHeight.cm;
   UnitWeight unitWeight = UnitWeight.kg;
   Gender selectedGender = Gender.notSelected;
-  int height = 180;
+  double height = 180;
   int weight = 60;
   int age = 18;
   late Timer _timer;
@@ -163,7 +163,7 @@ class _InputPageState extends State<InputPage> {
                     children: [
                       SizedBox(width: 35),
                       Text(
-                        height.toString(),
+                        height.toStringAsFixed(0),
                         style: kNumberTextStyle,
                       ),
                       SizedBox(width: 6),
@@ -192,12 +192,12 @@ class _InputPageState extends State<InputPage> {
                           RoundSliderThumbShape(enabledThumbRadius: 15.0),
                     ),
                     child: Slider(
-                      value: height.toDouble(),
+                      value: height,
                       min: 120.0,
                       max: 220.0,
                       onChanged: (double newValue) {
                         setState(() {
-                          height = newValue.round();
+                          height = newValue.roundToDouble();
                         });
                       },
                     ),
