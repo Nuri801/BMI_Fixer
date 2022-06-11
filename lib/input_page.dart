@@ -46,6 +46,24 @@ class _InputPageState extends State<InputPage> {
   int age = 18;
   late Timer _timer;
 
+  // double convertHeightUnit () {
+  //   if (unitHeight == UnitHeight.cm) {
+  //     double heightInFt = height / 30.48;
+  //     return heightInFt.round().toDouble();
+  //   } else {
+  //     double heightInCm = height * 30.48;
+  //     return heightInCm.round().toDouble();
+  //   }
+  //
+  //
+  //   // if (unitHeight == UnitHeight.cm) {
+  //   //   double heightInFt = height/30.48;
+  //   //   return heightInFt.toStringAsFixed(1);
+  //   // } else {
+  //   //   double heightInCm = heightInFt
+  //   // }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,9 +168,10 @@ class _InputPageState extends State<InputPage> {
                       ),
                       SizedBox(width: 6),
                       SwitchButton(
-                        onTap: () {setState(() {
-                          unitHeight = unitHeight == UnitHeight.cm ? UnitHeight.ft : UnitHeight.cm;
-                        });},
+                        onTap: () {
+                          // setState(() {  height = convertHeightUnit (); });
+                          setState(() {unitHeight = unitHeight == UnitHeight.cm ? UnitHeight.ft : UnitHeight.cm;});
+                          },
                         unit: unitHeight == UnitHeight.cm ? 'cm' : 'ft',
                       )
                       // Text(
