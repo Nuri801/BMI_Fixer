@@ -37,7 +37,6 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-
   UnitHeight unitHeight = UnitHeight.cm;
   UnitWeight unitWeight = UnitWeight.kg;
   Gender selectedGender = Gender.notSelected;
@@ -163,16 +162,21 @@ class _InputPageState extends State<InputPage> {
                     children: [
                       SizedBox(width: 35),
                       Text(
-                        unitHeight == UnitHeight.cm ? height.toStringAsFixed(0) : (height/30.48).toStringAsFixed(1),
+                        unitHeight == UnitHeight.cm
+                            ? height.toStringAsFixed(0)
+                            : (height / 30.48).toStringAsFixed(1),
                         style: kNumberTextStyle,
                       ),
                       SizedBox(width: 6),
                       SwitchButton(
                         onTap: () {
-
                           // setState(() {  height = convertHeightUnit (); });
-                          setState(() {unitHeight = unitHeight == UnitHeight.cm ? UnitHeight.ft : UnitHeight.cm;});
-                          },
+                          setState(() {
+                            unitHeight = unitHeight == UnitHeight.cm
+                                ? UnitHeight.ft
+                                : UnitHeight.cm;
+                          });
+                        },
                         unit: unitHeight == UnitHeight.cm ? 'cm' : 'ft',
                       )
                       // Text(
@@ -196,9 +200,6 @@ class _InputPageState extends State<InputPage> {
                       value: height,
                       min: 120,
                       max: 220,
-                      // min: unitHeight == UnitHeight.cm ? 120.0 : 3.8,
-                      // // min: unitHeight == UnitHeight.cm120.0,
-                      // max: unitHeight == UnitHeight.cm ? 220.0 : 7.25,
                       onChanged: (double newValue) {
                         setState(() {
                           height = newValue.roundToDouble();
@@ -230,16 +231,25 @@ class _InputPageState extends State<InputPage> {
                           // crossAxisAlignment: CrossAxisAlignment.baseline,
                           // textBaseline: TextBaseline.alphabetic,
                           children: [
-                            SizedBox(width: weight < 100? 45 : 13),
+                            Container(
+                              child: unitWeight == UnitWeight.kg ? SizedBox(width: weight < 100 ? 45 : 13) :
+                              SizedBox(width: weight < 100 ? 13 : 13)
+                            ),
                             Text(
-                              unitWeight == UnitWeight.kg ? weight.toString() : (weight * 2.205).toStringAsFixed(0),
+                              unitWeight == UnitWeight.kg
+                                  ? weight.toString()
+                                  : (weight * 2.205).toStringAsFixed(0),
                               style: kNumberTextStyle,
                             ),
                             SizedBox(width: 6),
                             SwitchButton(
-                              onTap: () {setState(() {
-                                unitWeight = unitWeight == UnitWeight.kg ? UnitWeight.lb : UnitWeight.kg;
-                              });},
+                              onTap: () {
+                                setState(() {
+                                  unitWeight = unitWeight == UnitWeight.kg
+                                      ? UnitWeight.lb
+                                      : UnitWeight.kg;
+                                });
+                              },
                               unit: unitWeight == UnitWeight.kg ? 'kg' : 'lb',
                             )
                             // Text(
