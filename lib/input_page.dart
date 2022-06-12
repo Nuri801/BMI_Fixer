@@ -163,7 +163,7 @@ class _InputPageState extends State<InputPage> {
                     children: [
                       SizedBox(width: 35),
                       Text(
-                        unitHeight == UnitHeight.cm ? height.toStringAsFixed(0) : (height/30.4).toStringAsFixed(1),
+                        unitHeight == UnitHeight.cm ? height.toStringAsFixed(0) : (height/30.48).toStringAsFixed(1),
                         style: kNumberTextStyle,
                       ),
                       SizedBox(width: 6),
@@ -232,7 +232,7 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             SizedBox(width: weight < 100? 45 : 13),
                             Text(
-                              weight.toString(),
+                              unitWeight == UnitWeight.kg ? weight.toString() : (weight * 2.205).toStringAsFixed(0),
                               style: kNumberTextStyle,
                             ),
                             SizedBox(width: 6),
