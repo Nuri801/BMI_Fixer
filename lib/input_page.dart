@@ -233,7 +233,7 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             Container(
                               child: unitWeight == UnitWeight.kg ? SizedBox(width: weight < 100 ? 45 : 13) :
-                              SizedBox(width: weight < 100 ? 13 : 13)
+                              SizedBox(width: weight > 45 ? 13 : 45)
                             ),
                             Text(
                               unitWeight == UnitWeight.kg
