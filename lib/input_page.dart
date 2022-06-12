@@ -160,14 +160,14 @@ class _InputPageState extends State<InputPage> {
                     // crossAxisAlignment: CrossAxisAlignment.baseline,
                     // textBaseline: TextBaseline.alphabetic,
                     children: [
-                      SizedBox(width: 35),
+                      SizedBox(width: unitHeight == UnitHeight.cm ? 35 : 50),
                       Text(
                         unitHeight == UnitHeight.cm
                             ? height.toStringAsFixed(0)
                             : (height / 30.48).toStringAsFixed(1),
                         style: kNumberTextStyle,
                       ),
-                      SizedBox(width: 6),
+                      const SizedBox(width: 9),
                       SwitchButton(
                         onTap: () {
                           // setState(() {  height = convertHeightUnit (); });
