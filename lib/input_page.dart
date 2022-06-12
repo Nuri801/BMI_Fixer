@@ -163,12 +163,13 @@ class _InputPageState extends State<InputPage> {
                     children: [
                       SizedBox(width: 35),
                       Text(
-                        height.toStringAsFixed(0),
+                        unitHeight == UnitHeight.cm ? height.toStringAsFixed(0) : (height/30.4).toStringAsFixed(1),
                         style: kNumberTextStyle,
                       ),
                       SizedBox(width: 6),
                       SwitchButton(
                         onTap: () {
+
                           // setState(() {  height = convertHeightUnit (); });
                           setState(() {unitHeight = unitHeight == UnitHeight.cm ? UnitHeight.ft : UnitHeight.cm;});
                           },
@@ -193,8 +194,11 @@ class _InputPageState extends State<InputPage> {
                     ),
                     child: Slider(
                       value: height,
-                      min: 120.0,
-                      max: 220.0,
+                      min: 120,
+                      max: 220,
+                      // min: unitHeight == UnitHeight.cm ? 120.0 : 3.8,
+                      // // min: unitHeight == UnitHeight.cm120.0,
+                      // max: unitHeight == UnitHeight.cm ? 220.0 : 7.25,
                       onChanged: (double newValue) {
                         setState(() {
                           height = newValue.roundToDouble();
