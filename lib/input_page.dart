@@ -209,21 +209,24 @@ class _InputPageState extends State<InputPage> {
                           style: kLabelTextStyle,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           // crossAxisAlignment: CrossAxisAlignment.baseline,
                           // textBaseline: TextBaseline.alphabetic,
                           children: [
-                            Container(
-                              child: unitWeight == UnitWeight.kg ? SizedBox(width: weight < 99 ? 45 : 13) :
-                              SizedBox(width: weight > 45 ? 13 : 45)
-                            ),
+                            // weight.toStringAsFixed(0).length < 3 &&
+                            //     (weight * 2.205).toStringAsFixed(0).length < 3 ? 35 :
+                            // Container(
+                            //   child: unitWeight == UnitWeight.kg
+                            //       ? SizedBox(width: weight < 99 ? 35 : 3)
+                            //       : SizedBox(width: weight >= 44 ? 3 : 35),
+                            // ),
                             Text(
                               unitWeight == UnitWeight.kg
                                   ? weight.toStringAsFixed(0)
                                   : (weight * 2.205).toStringAsFixed(0),
                               style: kNumberTextStyle,
                             ),
-                            SizedBox(width: 6),
+                            SizedBox(width: 9),
                             SwitchButton(
                               onTap: () {
                                 setState(() {
@@ -233,8 +236,8 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                               unit: unitWeight == UnitWeight.kg ? 'kg' : 'lb',
-                            )
-                            // Text(
+                            ) ,
+                            const SizedBox(width: 8),// Text(
                             //   'kg',
                             //   style: kLabelTextStyle,
                             // ),
@@ -249,7 +252,9 @@ class _InputPageState extends State<InputPage> {
                                 setState(() {
                                   if (weight > 1) {
                                     // weight--;
-                                    unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
+                                    unitWeight == UnitWeight.kg
+                                        ? weight--
+                                        : weight -= 0.453;
                                   }
                                 });
                               },
@@ -258,7 +263,9 @@ class _InputPageState extends State<InputPage> {
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
                                     if (weight > 1) {
-                                      unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
+                                      unitWeight == UnitWeight.kg
+                                          ? weight--
+                                          : weight -= 0.453;
                                     }
                                   });
                                 });
@@ -277,7 +284,9 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
-                                  unitWeight == UnitWeight.kg ? weight++ : weight += 0.453;
+                                  unitWeight == UnitWeight.kg
+                                      ? weight++
+                                      : weight += 0.453;
                                 });
                               },
                               onLongPressed: (TapDownDetails details) {
@@ -285,7 +294,9 @@ class _InputPageState extends State<InputPage> {
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
                                     if (weight >= 0) {
-                                      unitWeight == UnitWeight.kg ? weight++ : weight += 0.453;
+                                      unitWeight == UnitWeight.kg
+                                          ? weight++
+                                          : weight += 0.453;
                                     }
                                   });
                                 });
