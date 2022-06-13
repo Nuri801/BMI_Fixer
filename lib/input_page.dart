@@ -247,7 +247,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  if (weight > 0) {
+                                  if (weight > 1) {
                                     // weight--;
                                     unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
                                   }
@@ -257,7 +257,7 @@ class _InputPageState extends State<InputPage> {
                                 _timer = Timer.periodic(
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
-                                    if (weight > 0) {
+                                    if (weight > 1) {
                                       unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
                                     }
                                   });
