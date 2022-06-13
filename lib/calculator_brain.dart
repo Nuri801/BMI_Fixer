@@ -4,7 +4,7 @@ class CalculatorBrain {
   CalculatorBrain({required this.height, required this.weight});
 
   final double height;
-  final int weight;
+  final double weight;
 
   late double _bmi;
 

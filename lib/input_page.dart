@@ -41,27 +41,9 @@ class _InputPageState extends State<InputPage> {
   UnitWeight unitWeight = UnitWeight.kg;
   Gender selectedGender = Gender.notSelected;
   double height = 180;
-  int weight = 60;
+  double weight = 60;
   int age = 18;
   late Timer _timer;
-
-  // double convertHeightUnit () {
-  //   if (unitHeight == UnitHeight.cm) {
-  //     double heightInFt = height / 30.48;
-  //     return heightInFt.round().toDouble();
-  //   } else {
-  //     double heightInCm = height * 30.48;
-  //     return heightInCm.round().toDouble();
-  //   }
-  //
-  //
-  //   // if (unitHeight == UnitHeight.cm) {
-  //   //   double heightInFt = height/30.48;
-  //   //   return heightInFt.toStringAsFixed(1);
-  //   // } else {
-  //   //   double heightInCm = heightInFt
-  //   // }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -237,7 +219,7 @@ class _InputPageState extends State<InputPage> {
                             ),
                             Text(
                               unitWeight == UnitWeight.kg
-                                  ? weight.toString()
+                                  ? weight.toStringAsFixed(0)
                                   : (weight * 2.205).toStringAsFixed(0),
                               style: kNumberTextStyle,
                             ),
@@ -267,6 +249,7 @@ class _InputPageState extends State<InputPage> {
                                 setState(() {
                                   if (weight > 0) {
                                     weight--;
+                                    // unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
                                   }
                                 });
                               },
