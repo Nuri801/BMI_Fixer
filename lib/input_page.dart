@@ -214,7 +214,7 @@ class _InputPageState extends State<InputPage> {
                           // textBaseline: TextBaseline.alphabetic,
                           children: [
                             Container(
-                              child: unitWeight == UnitWeight.kg ? SizedBox(width: weight < 100 ? 45 : 13) :
+                              child: unitWeight == UnitWeight.kg ? SizedBox(width: weight < 99 ? 45 : 13) :
                               SizedBox(width: weight > 45 ? 13 : 45)
                             ),
                             Text(
@@ -248,8 +248,8 @@ class _InputPageState extends State<InputPage> {
                               onPressed: () {
                                 setState(() {
                                   if (weight > 0) {
-                                    weight--;
-                                    // unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
+                                    // weight--;
+                                    unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
                                   }
                                 });
                               },
@@ -258,7 +258,7 @@ class _InputPageState extends State<InputPage> {
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
                                     if (weight > 0) {
-                                      weight--;
+                                      unitWeight == UnitWeight.kg ? weight-- : weight -= 0.453;
                                     }
                                   });
                                 });
@@ -277,7 +277,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
-                                  weight++;
+                                  unitWeight == UnitWeight.kg ? weight++ : weight += 0.453;
                                 });
                               },
                               onLongPressed: (TapDownDetails details) {
@@ -285,7 +285,7 @@ class _InputPageState extends State<InputPage> {
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
                                     if (weight >= 0) {
-                                      weight++;
+                                      unitWeight == UnitWeight.kg ? weight++ : weight += 0.453;
                                     }
                                   });
                                 });
