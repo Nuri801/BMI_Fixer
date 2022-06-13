@@ -51,19 +51,16 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         leadingWidth: 80,
         leading: RawMaterialButton(
-          // onLongPress: onLongPressed,
-          child: Icon(Iconsax.setting_4, size: 30),
+          child: Icon(Iconsax.menu_1, size: 30),
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => SettingsPage()),
             );
-            //create the sliding window here;
           },
           elevation: 100,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15.0))),
-          constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
           fillColor: Color(0xFF0A0D22),
         ),
         title: Center(child: Text('BMI CALCULATOR')),
@@ -210,23 +207,14 @@ class _InputPageState extends State<InputPage> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
-                          // crossAxisAlignment: CrossAxisAlignment.baseline,
-                          // textBaseline: TextBaseline.alphabetic,
                           children: [
-                            // weight.toStringAsFixed(0).length < 3 &&
-                            //     (weight * 2.205).toStringAsFixed(0).length < 3 ? 35 :
-                            // Container(
-                            //   child: unitWeight == UnitWeight.kg
-                            //       ? SizedBox(width: weight < 99 ? 35 : 3)
-                            //       : SizedBox(width: weight >= 44 ? 3 : 35),
-                            // ),
                             Text(
                               unitWeight == UnitWeight.kg
                                   ? weight.toStringAsFixed(0)
                                   : (weight * 2.205).toStringAsFixed(0),
                               style: kNumberTextStyle,
                             ),
-                            SizedBox(width: 9),
+                            const SizedBox(width: 9),
                             SwitchButton(
                               onTap: () {
                                 setState(() {
