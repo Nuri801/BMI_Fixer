@@ -49,9 +49,10 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 80,
+        leadingWidth: 60,
         leading: RawMaterialButton(
-          child: Icon(Iconsax.menu_1, size: 30),
+          child: Icon(Iconsax.star, size: 30),
+          // menu_1
           onPressed: () {
             Navigator.push(
               context,
@@ -79,7 +80,7 @@ class _InputPageState extends State<InputPage> {
             elevation: 100,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(15.0))),
-            constraints: BoxConstraints.tightFor(width: 80, height: 56.0),
+            constraints: BoxConstraints.tightFor(width: 60, height: 56.0),
             fillColor: Color(0xFF0A0D22),
           ),
         ],
@@ -136,8 +137,6 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.baseline,
-                    // textBaseline: TextBaseline.alphabetic,
                     children: [
                       SizedBox(width: unitHeight == UnitHeight.cm ? 35 : 50),
                       Text(
@@ -149,7 +148,6 @@ class _InputPageState extends State<InputPage> {
                       const SizedBox(width: 9),
                       SwitchButton(
                         onTap: () {
-                          // setState(() {  height = convertHeightUnit (); });
                           setState(() {
                             unitHeight = unitHeight == UnitHeight.cm
                                 ? UnitHeight.ft
@@ -158,10 +156,6 @@ class _InputPageState extends State<InputPage> {
                         },
                         unit: unitHeight == UnitHeight.cm ? 'cm' : 'ft',
                       )
-                      // Text(
-                      //   'cm',
-                      //   style: kLabelTextStyle,
-                      // )
                     ],
                   ),
                   SliderTheme(
@@ -225,10 +219,7 @@ class _InputPageState extends State<InputPage> {
                               },
                               unit: unitWeight == UnitWeight.kg ? 'kg' : 'lb',
                             ) ,
-                            const SizedBox(width: 8),// Text(
-                            //   'kg',
-                            //   style: kLabelTextStyle,
-                            // ),
+                            const SizedBox(width: 8),
                           ],
                         ),
                         Row(
@@ -239,7 +230,6 @@ class _InputPageState extends State<InputPage> {
                               onPressed: () {
                                 setState(() {
                                   if (weight > 1) {
-                                    // weight--;
                                     unitWeight == UnitWeight.kg
                                         ? weight--
                                         : weight -= 0.453;
