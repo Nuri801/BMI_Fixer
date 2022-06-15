@@ -30,7 +30,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('more     ')),
+        title: const Center(child: Text('Remove this page    ')),
       ),
       body: Container(),
       // body: Column(
