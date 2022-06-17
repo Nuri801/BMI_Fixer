@@ -30,7 +30,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Rate this app   ')),
+        title: const Center(child: Text('settings   ')),
       ),
       body: Container(),
       // body: Column(
