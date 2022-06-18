@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:bmi_fixer/settings_page.dart';
 import 'package:bmi_fixer/switch_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
