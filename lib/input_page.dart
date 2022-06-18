@@ -50,20 +50,7 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         leadingWidth: 60,
-        leading: RawMaterialButton(
-          child: Icon(Iconsax.star, size: 30),
-          // menu_1
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SettingsPage()),
-            );
-          },
-          elevation: 100,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(15.0))),
-          fillColor: Color(0xFF0A0D22),
-        ),
+        leading: Container(),
         title: Center(child: Text('BMI CALCULATOR')),
         actions: [
           RawMaterialButton(
