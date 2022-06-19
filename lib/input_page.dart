@@ -117,7 +117,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'HEIGHT',
+                    'HEIGHT input',
                     style: kLabelTextStyle,
                   ),
                   Row(
