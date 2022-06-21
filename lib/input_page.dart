@@ -307,7 +307,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  if (age > 0) {
+                                  if (age > 1) {
                                     age--;
                                   }
                                 });
@@ -316,7 +316,7 @@ class _InputPageState extends State<InputPage> {
                                 _timer = Timer.periodic(
                                     Duration(milliseconds: 70), (t) {
                                   setState(() {
-                                    if (age > 0) {
+                                    if (age > 1) {
                                       age--;
                                     }
                                   });
