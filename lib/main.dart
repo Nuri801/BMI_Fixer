@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'input_page.dart';
+//my app bundleID = com.nuriddinburkhonov.bmicalculator
 
 void main() => runApp(BMICalculator());
 
