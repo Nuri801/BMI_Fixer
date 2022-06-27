@@ -13,8 +13,6 @@ import 'bottom_button.dart';
 import 'calculator_brain.dart';
 import 'package:iconsax/iconsax.dart';
 
-
-
 enum Gender {
   male,
   female,
