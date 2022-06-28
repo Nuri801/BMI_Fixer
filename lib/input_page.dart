@@ -90,6 +90,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
+
                     ),
                   ),
                 ),
