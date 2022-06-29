@@ -44,7 +44,6 @@ class _InputPageState extends State<InputPage> {
   int age = 18;
   late Timer _timer;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
