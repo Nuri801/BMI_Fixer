@@ -70,6 +70,7 @@ class _InputPageState extends State<InputPage> {
             fillColor: Color(0xFF0A0D22),
           ),
         ],
+
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
