@@ -51,6 +51,7 @@ class _InputPageState extends State<InputPage> {
         leadingWidth: 60,
         leading: Container(),
         title: Center(child: Text('BMI CALCULATOR')),
+
         actions: [
           RawMaterialButton(
             // onLongPress: onLongPressed,
